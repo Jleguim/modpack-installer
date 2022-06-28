@@ -6,8 +6,14 @@ Literalmente instalador para **Chimbaland 3** para gente que no le sabe.
 
 ### Prerrequisitos
 - [Forge 1.16.5](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.16.5.html)
-- [Node](https://nodejs.org/en/download/)
+- [Git Bash](https://git-scm.com/downloads)
 - [Un cerebro](https://downloadmoreram.com/)
+
+##### tlauncher
+- Los usuarios de tlauncher tendrán que cambiar el directorio de `.minecraft` a la carpeta `.minecraft/profiles/chimbaland` para entrar a Chimbaland.
+- Para volver a jugar Minecraft normal solo hay que cambiar este directorio de nuevo.
+- Comprarse el juego original. (clave)
+- Iniciar el juego con Forge 1.16.5 `NO ForgeOptifine 1.16.5`
 
 #### Cositas a tener en cuenta
 - Revisar los argumentos de Java en el launcher de Minecraft y colocar la cantidad deseada. (Por defecto está puesta en 4GB)
