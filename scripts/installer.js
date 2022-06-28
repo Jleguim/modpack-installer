@@ -1,6 +1,9 @@
 const path = require('path')
 const fs = require('fs-extra')
 
+const Progress = require('./progress')
+const progress = new Progress()
+
 // Asumire que forge ya esta instalado
 const minecraft = path.join(process.env.APPDATA, '/.minecraft/')
 const chimbastuff = path.join(__dirname, '/../chimbastuff/')
@@ -8,26 +11,18 @@ const profiles = path.join(minecraft, '/profiles/')
 const chimbaperfil = path.join(minecraft, '/profiles/chimbaperfil/')
 const launcher_profiles = path.join(minecraft, '/launcher_profiles.json')
 
-// Copiar mods y configs
 if (!fs.existsSync(profiles)) fs.mkdirSync(profiles)
 if (!fs.existsSync(chimbaperfil)) fs.mkdirSync(chimbaperfil)
 
 var dirs = fs.readdirSync(chimbastuff)
-var progress = 0
-var percent = 0
-var percent_str = ""
+progress.steps = dirs.length + 1
 
 for (var i = 0; i < dirs.length; i++) {
-    progress = i + 1
-    percent = Math.round((progress / dirs.length) * 100)
-    percent_str = percent.toString()
-
     var dir = dirs[i]
-
     var src = path.join(chimbastuff, dir)
     var dest = path.join(chimbaperfil, dir)
 
-    console.log("Copying " + progress + " of " + dirs.length + " (" + percent_str + "%)")
+    console.log(`Copiando ${progress.display()}`)
     fs.copySync(src, dest)
 }
 
@@ -43,4 +38,5 @@ profile_data.profiles.chimbaland = {
     type: "custom"
 }
 
+console.log(`Escribiendo ${progress.display()}`)
 fs.writeFileSync(launcher_profiles, JSON.stringify(profile_data, 0, 3))
