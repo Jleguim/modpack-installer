@@ -1,14 +1,22 @@
 {
-  "name": "chimbahub",
+  "name": "electron-app",
+  "productName": "Chimbaland 3 Installer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Si",
+  "main": "./main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron main.js",
+    "build": "electron-packager . --icon ./icon.ico --out ./bin --overwrite",
+    "help": "electron-packager --help"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "electron": "^19.0.6",
+    "electron-packager": "^15.5.1"
+  },
   "dependencies": {
     "fs-extra": "^10.1.0",
     "git-clone": "^0.2.0"
