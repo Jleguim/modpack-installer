@@ -25,6 +25,13 @@ function createWindow() {
 
     mainWindow.removeMenu()
 
+    ipcMain.handle('checkInstalled', (event) => {
+        return new Promise((res, rej) => {
+            if (!fs.existsSync(profiles) || !fs.existsSync(chimbaland)) res(false)
+            if (fs.existsSync(chimbaland + '\\mods\\')) res(true)
+        })
+    })
+
     ipcMain.handle('downloadMods', (event) => {
         if (fs.existsSync(temp)) {
             fs.rmSync(temp, { recursive: true, force: true })
@@ -57,7 +64,7 @@ function createWindow() {
             const profile_data = JSON.parse(fs.readFileSync(launcher_profiles))
 
             profile_data.profiles.chimbaland = {
-                gameDir: chimbaland,
+                gameDir: path.normalize(chimbaland),
                 icon: require('./image.js'),
                 javaArgs: '-Xmx4G -XX:+UnlockExperimentalVMOptions -XX:+UseG1GC -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M',
                 lastUsed: "2022-06-27T05:02:27.601Z",
