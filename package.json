@@ -1,7 +1,7 @@
 {
   "name": "chimba-installer",
   "productName": "Chimbaland 3 Installer",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Instalador de mods Chimbaland 3",
   "main": "main.js",
   "scripts": {
@@ -16,7 +16,8 @@
     "electron-packager": "^15.5.1"
   },
   "dependencies": {
+    "adm-zip": "^0.5.9",
     "fs-extra": "^10.1.0",
-    "git-clone": "^0.2.0"
+    "superagent": "^8.0.0"
   }
 }
