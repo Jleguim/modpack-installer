@@ -103,6 +103,10 @@ ipcMain.handle('createProfile', (event) => {
     })
 })
 
+ipcMain.handle('getVersion', (event) => {
+    return require("./package.json").version;
+})
+
 app.whenReady().then(() => {
     createWindow()
 })
