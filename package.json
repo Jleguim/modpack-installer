@@ -1,7 +1,7 @@
 {
   "name": "chimba-installer",
   "productName": "Chimbaland 3 Installer",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Instalador de mods Chimbaland 3",
   "main": "main.js",
   "scripts": {

@@ -84,6 +84,8 @@ ipcMain.handle('unzipMods', (event) => {
 
 ipcMain.handle('createProfile', (event) => {
     return new Promise(async (res, rej) => {
+        if (!fs.existsSync(launcher_profiles)) return res()
+
         const profile_data = JSON.parse(fs.readFileSync(launcher_profiles))
 
         if (profile_data.profiles.chimbaland) return res()
