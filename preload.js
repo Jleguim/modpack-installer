@@ -6,5 +6,7 @@ contextBridge.exposeInMainWorld('chimbaland', {
     deleteModFolder: () => ipcRenderer.invoke('deleteModFolder'),
     checkInstalled: () => ipcRenderer.invoke('checkInstalled'),
 
-    createProfile: () => ipcRenderer.invoke('createProfile')
+    createProfile: () => ipcRenderer.invoke('createProfile'),
+
+    getVersion: () => ipcRenderer.invoke('getVersion')
 })
