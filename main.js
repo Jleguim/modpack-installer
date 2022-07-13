@@ -16,7 +16,7 @@ function createWindow() {
         }
     })
 
-    // mainWindow.removeMenu()
+    mainWindow.removeMenu()
     mainWindow.loadFile('./public/views/index.html')
 }
 

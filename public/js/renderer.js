@@ -51,11 +51,11 @@ async function installModPack() {
 
         state('Iniciando 0/3')
         log('Descargando mods')
-        // await window.installer.downloadMods()
+        await window.installer.downloadMods()
         state('Descargado 1/3')
 
         log('Copiando archivos')
-        // await window.installer.unzipMods()
+        await window.installer.unzipMods()
         state('Copiado 2/3')
 
         log('Creando perfil en Launcher')
