@@ -1,31 +1,37 @@
+# modpack-installer
+Originally a side-project for a friend's Minecraft Modded SMP ([chimba-installer](https://github.com/Jleguim/chimba-installer)). Decided it could help a couple of people.
 
-  
+---
+### Building
+Install dependencies and then build using the NPM script `build`
 
-## chimbaland-installer
-> "El flojo trabaja doble" -Un random
+    npm install --save
+    npm run build
 
-Literalmente instalador para **Chimbaland 3** para gente que no le sabe.
+### Setting it up
 
-### Prerrequisitos
-- [Forge 1.16.5](https://files.minecraftforge.net/net/minecraftforge/forge/index_1.16.5.html)
-- [~~Git Bash~~](https://git-scm.com/downloads) (No mas gracias a @Jleguim)
-- [Un cerebro](https://downloadmoreram.com/)
+#### Main branch
+This is where the installer's code lies, the only stuff you need to change is:
+- Your ModPack's images, that is, `image.png` and `icon.ico`
+- The installer's configuration, later explained.
 
-##### tlauncher
-- Los usuarios de **tlauncher** tendrán que cambiar el directorio de `.minecraft` a la carpeta `.minecraft/profiles/chimbaland` para entrar a **Chimbaland**.
-- Para volver a jugar Minecraft normal solo hay que cambiar este directorio de nuevo.
-- Iniciar el juego con Forge 1.16.5 **NO ForgeOptifine 1.16.5**
-- ~~Comprarse el juego original. (clave)~~
+#### Mods branch
+Here is where, you guessed it, your mods lie. You can put here anything that's shared e.g. mod configs, texture packs, basically everything that can be in your Minecraft's profile folder.
+- Just push some commits with the mods you intend in using and stuff.
 
-#### Cositas a tener en cuenta
-- Revisar los argumentos de Java en el launcher de Minecraft y colocar la cantidad deseada. (Por defecto está puesta en 4GB)
-- **No instales Optifine por nada del mundo**, Magnesium se encargará de no matar tus frames.
-- De vez en cuando se te pedirá que descargues de nuevo este repo, ya que habrá actualizaciones de diferentes mods.
+#### Config.js
+`modpack_name` Used for titles and such.
 
-#### Qué va a hacer?
-- Literalmente poner los mods en la carpeta `mods`.
-- Crear perfil de **Chimbaland 3** en el launcher de Minecraft.
-  
-#### Qué no va a hacer?
-- Chupar tu información.
-- Instalar troyanos.
+`profile_dir` The name of the folder your profile is going to be in.
+
+`repo` The link to the repo you cloned into.
+
+`branch` If you're following these steps, leave it as is.
+
+`name` Name of the repo you cloned into.
+
+`image` Leave as is.
+
+`forgeVersion` The version of Forge you intend in using.
+
+`javaArgs` The default java arguments for the profile.
